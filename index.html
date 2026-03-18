@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tango Aeroworks</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', sans-serif; background: #0a0a0f; color: #e0e0e0; }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; width: 100%; padding: 20px 60px;
+      display: flex; justify-content: space-between; align-items: center;
+      background: rgba(10,10,15,0.85); backdrop-filter: blur(10px); z-index: 100;
+    }
+    nav .logo { font-size: 1.2rem; font-weight: 700; letter-spacing: 3px; color: #fff; }
+    nav ul { list-style: none; display: flex; gap: 40px; }
+    nav ul a { text-decoration: none; color: #aaa; font-size: 0.9rem; letter-spacing: 1px; transition: color 0.3s; }
+    nav ul a:hover { color: #fff; }
+
+    /* HERO */
+    #hero {
+      height: 100vh; display: flex; flex-direction: column;
+      justify-content: center; align-items: center; text-align: center;
+      padding: 0 20px;
+      background: radial-gradient(ellipse at center, #0d1b2a 0%, #0a0a0f 70%);
+    }
+    #hero .tag { font-size: 0.8rem; letter-spacing: 4px; color: #4a9eff; margin-bottom: 20px; text-transform: uppercase; }
+    #hero h1 { font-size: clamp(2.5rem, 6vw, 5rem); font-weight: 700; letter-spacing: 2px; color: #fff; line-height: 1.1; margin-bottom: 24px; }
+    #hero h1 span { color: #4a9eff; }
+    #hero p { font-size: 1.1rem; color: #888; max-width: 560px; line-height: 1.7; margin-bottom: 40px; }
+    .btn {
+      padding: 14px 36px; border: 1px solid #4a9eff; color: #4a9eff;
+      text-decoration: none; font-size: 0.9rem; letter-spacing: 2px;
+      transition: all 0.3s; text-transform: uppercase;
+    }
+    .btn:hover { background: #4a9eff; color: #0a0a0f; }
+
+    /* SECTIONS */
+    section { padding: 100px 60px; max-width: 1100px; margin: 0 auto; }
+    .section-label { font-size: 0.75rem; letter-spacing: 4px; color: #4a9eff; text-transform: uppercase; margin-bottom: 16px; }
+    h2 { font-size: 2.2rem; font-weight: 700; color: #fff; margin-bottom: 16px; }
+    .divider { width: 48px; height: 2px; background: #4a9eff; margin-bottom: 48px; }
+
+    /* SERVICES */
+    #services { max-width: 1100px; margin: 0 auto; padding: 100px 60px; }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; }
+    .card {
+      background: #111520; border: 1px solid #1e2535;
+      padding: 36px 28px; transition: border-color 0.3s;
+    }
+    .card:hover { border-color: #4a9eff; }
+    .card .icon { font-size: 1.8rem; margin-bottom: 16px; }
+    .card h3 { font-size: 1rem; font-weight: 600; color: #fff; margin-bottom: 12px; letter-spacing: 1px; }
+    .card p { font-size: 0.88rem; color: #666; line-height: 1.7; }
+
+    /* ABOUT */
+    #about { max-width: 1100px; margin: 0 auto; padding: 100px 60px; }
+    #about .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    #about p { color: #888; line-height: 1.8; font-size: 0.95rem; margin-bottom: 16px; }
+    .stat-row { display: flex; gap: 40px; margin-top: 36px; }
+    .stat h3 { font-size: 2rem; color: #4a9eff; font-weight: 700; }
+    .stat p { font-size: 0.8rem; color: #555; letter-spacing: 1px; text-transform: uppercase; }
+
+    /* CONTACT */
+    #contact { max-width: 1100px; margin: 0 auto; padding: 100px 60px; }
+    form { display: flex; flex-direction: column; gap: 16px; max-width: 560px; }
+    input, textarea {
+      background: #111520; border: 1px solid #1e2535; color: #e0e0e0;
+      padding: 14px 18px; font-size: 0.9rem; outline: none;
+      transition: border-color 0.3s; font-family: inherit;
+    }
+    input:focus, textarea:focus { border-color: #4a9eff; }
+    textarea { height: 140px; resize: vertical; }
+    input::placeholder, textarea::placeholder { color: #444; }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid #1e2535; padding: 32px 60px;
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 0.8rem; color: #444;
+    }
+    footer a { color: #444; text-decoration: none; }
+    footer a:hover { color: #4a9eff; }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">TANGO AEROWORKS</div>
+    <ul>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="tag">Aerospace · Autonomy · Innovation</div>
+    <h1>Engineering the<br/><span>Future of Flight</span></h1>
+    <p>Tango Aeroworks delivers cutting-edge aerodynamic consulting, UAV development, and autonomous systems engineering for the next generation of aerospace challenges.</p>
+    <a href="#contact" class="btn">Get in Touch</a>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="section-label">What We Do</div>
+    <h2>Our Services</h2>
+    <div class="divider"></div>
+    <div class="services-grid">
+      <div class="card">
+        <div class="icon">✈️</div>
+        <h3>Aerodynamic Consulting</h3>
+        <p>CFD analysis, drag optimization, and aerodynamic design for UAVs, motorsports, and industrial applications.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🤖</div>
+        <h3>UAV Development</h3>
+        <p>End-to-end design and development of unmanned aerial vehicles with autonomous flight capabilities.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🎯</div>
+        <h3>Autonomous Systems</h3>
+        <p>Perception, navigation, and control systems for autonomous platforms across aerospace and defence.</p>
+      </div>
+      <div class="card">
+        <div class="icon">📐</div>
+        <h3>CAD & Structural Design</h3>
+        <p>Precision parametric modelling and structural analysis using industry-standard tools including CATIA.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="about-grid">
+      <div>
+        <div class="section-label">Who We Are</div>
+        <h2>Built for the Frontier</h2>
+        <div class="divider"></div>
+        <p>Tango Aeroworks is a Mumbai-based aerospace engineering and consulting firm focused on autonomous systems, aerodynamic design, and UAV technology.</p>
+        <p>We work at the intersection of advanced engineering and emerging technology — delivering precise, scalable solutions for defence, motorsports, and industrial clients.</p>
+        <div class="stat-row">
+          <div class="stat"><h3>2026</h3><p>Founded</p></div>
+          <div class="stat"><h3>Mumbai</h3><p>Headquartered</p></div>
+          <div class="stat"><h3>LLP</h3><p>Registered Entity</p></div>
+        </div>
+      </div>
+      <div style="background:#111520; border:1px solid #1e2535; height:320px; display:flex; align-items:center; justify-content:center; color:#2a3550; font-size:0.8rem; letter-spacing:2px;">
+        [ IMAGE PLACEHOLDER ]
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-label">Reach Out</div>
+    <h2>Contact Us</h2>
+    <div class="divider"></div>
+    <form>
+      <input type="text" placeholder="Your Name" />
+      <input type="email" placeholder="Your Email" />
+      <input type="text" placeholder="Subject" />
+      <textarea placeholder="Your Message"></textarea>
+      <button type="submit" class="btn" style="cursor:pointer; background:none; width:fit-content;">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    <span>© 2026 Tango Aeroworks LLP. All rights reserved.</span>
+    <a href="mailto:contact@tangoaeroworks.com">contact@tangoaeroworks.com</a>
+  </footer>
+
+</body>
+</html>
